@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <link rel="stylesheet" href="github_challenge.css" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script src="handlebars-v2.0.0.js"></script>
+    <script src="github_challenge.js"></script>
+ </head>
+ <body>
+  <h1> 50 Github Repos Written In Ruby (creative title) </h1>
+  <div id="info_holder"></div>
+  <script id="template" type="text/x-handlebars-template">
+    {{#each repos}}
+    <a href={{this.url}}><h2><b>{{this.count}}:</b> {{this.name}}</h2></a>
+    <p><b>Description:</b> {{this.description}}</p>
+    <h4><b>Forks:</b> {{this.forks}} </h4>
+    <div class="contributions-holder">
+      <a class="contrib" href={{contributors}}><div class="button">Click To See Contributors</div></a>
+    </div>
+    <hr>
+    {{/each}}
+  </script>
+ </body>
+</html>
